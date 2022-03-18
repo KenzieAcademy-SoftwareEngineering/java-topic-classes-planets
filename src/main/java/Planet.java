@@ -2,50 +2,39 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Planet {
-    //class properties/variables
-    private static int starName = "Sun";
-    private static int totalPlanets;
-    //private static HashMap distanceToSunMap;
-    //distance in 1000 km
-    private static Map<String, Integer> distanceToSunMap = new HashMap<>(
-            Map.of("MERCURY",57900,
-                    "VENUS", 108200,
-                    "EARTH", 149600,
-                    "MARS",227900,
-                    "JUPITER", 778600,
-                    "SATURN", 1433500,
-                    "URANUS", 2872500,
-                    "NEPTUNE", 4495100
-            )
-    );
+    //Properties
+    protected static int numOfPlanets = 8;
+    protected static String starName = "Sun";
 
-    private String name;
-    private String type;
-    private int distance;
+    protected String name;
+    protected int numOfMoons;
+    protected PlanetType type;    // gaseous or terrestrial
 
-    //constructors
+    //constructor - default
+    public Planet() {
+        this.name = "";
+        this.numOfMoons = 0;
+        this.type = PlanetType.TERRESTRIAL;
+    }
+
     public Planet(String name) {
         this.name = name;
-        this.type = "";
-        this.distance = 0;
     }
 
-    //methods
+    //Methods
 
-    public static int getTotalPlanets() {
-        return totalPlanets;
+    //getter method for static variable
+    public static int getNumOfPlanets() {
+        return numOfPlanets;
     }
 
-    public static void setTotalPlanets(int totalPlanets) {
-        Planet.totalPlanets = totalPlanets;
-    }
-
-    public static HashMap getDistanceToSunMap() {
-        return (HashMap) distanceToSunMap;
-    }
-
-    public static void setDistanceToSunMap(HashMap distanceToSunMap) {
-        Planet.distanceToSunMap = distanceToSunMap;
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "name='" + name + '\'' +
+                ", numOfMoons=" + numOfMoons +
+                ", type='" + type + '\'' +
+                '}';
     }
 
     public String getName() {
@@ -56,19 +45,21 @@ public class Planet {
         this.name = name;
     }
 
-    public String getType() {
+    public int getNumOfMoons() {
+        return numOfMoons;
+    }
+
+    public void setNumOfMoons(int numOfMoons) {
+        this.numOfMoons = numOfMoons;
+    }
+
+    public PlanetType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(PlanetType type) {
         this.type = type;
     }
-
-    public int getDistance() {
-        return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
 }
+
+//define enum
