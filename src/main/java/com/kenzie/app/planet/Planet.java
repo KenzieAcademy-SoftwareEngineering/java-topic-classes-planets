@@ -1,3 +1,5 @@
+package com.kenzie.app.planet;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +32,7 @@ public class Planet {
 
     @Override
     public String toString() {
-        return "Planet{" +
+        return "com.kenzie.app.planet.Planet{" +
                 "name='" + name + '\'' +
                 ", numOfMoons=" + numOfMoons +
                 ", type='" + type + '\'' +

@@ -1,11 +1,12 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.lang.Integer;
+import com.kenzie.app.planet.Planet;
+import com.kenzie.app.planet.PlanetDistance;
+import com.kenzie.app.planet.PlanetType;
 
 public class Application {
     public static void main(String[] args){
+
+        //Sample code to test out classes and enums
         System.out.println("Total planets:");
-        System.out.println(Planet.numOfPlanets);
         System.out.println(Planet.getNumOfPlanets());
 
         Planet firstPlanet = new Planet("Saturn");
@@ -20,7 +21,7 @@ public class Application {
         //EnumUtils library  -- has extra functions for Enums
 
         //loop through an enum
-//        for (PlanetType currentVal : PlanetType.values()) {
+//        for (com.kenzie.app.planet.PlanetType currentVal : com.kenzie.app.planet.PlanetType.values()) {
 //            System.out.println(currentVal);
 //        }
 

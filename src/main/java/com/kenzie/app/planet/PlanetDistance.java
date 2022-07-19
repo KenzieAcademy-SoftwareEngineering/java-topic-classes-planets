@@ -1,3 +1,5 @@
+package com.kenzie.app.planet;
+
 public enum PlanetDistance {
 
     //in 1000 km
